@@ -10,6 +10,7 @@
 		E6CD106E22BA2D79005E9741 /* SW_MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CD106422BA2D78005E9741 /* SW_MJRefresh.framework */; };
 		E6CD107322BA2D79005E9741 /* SW_MJRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD107222BA2D79005E9741 /* SW_MJRefreshTests.swift */; };
 		E6CD107522BA2D79005E9741 /* SW_MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = E6CD106722BA2D78005E9741 /* SW_MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAD98A2994ACEE4A4890C5FD /* Pods_SW_MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9340BE3543E2493FA6EF62B3 /* Pods_SW_MJRefresh.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66C9F2A77DF8432890D11FED /* Pods-SW_MJRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SW_MJRefresh.debug.xcconfig"; path = "Target Support Files/Pods-SW_MJRefresh/Pods-SW_MJRefresh.debug.xcconfig"; sourceTree = "<group>"; };
+		732BF0B6BD7DA74138D81BA4 /* Pods-SW_MJRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SW_MJRefresh.release.xcconfig"; path = "Target Support Files/Pods-SW_MJRefresh/Pods-SW_MJRefresh.release.xcconfig"; sourceTree = "<group>"; };
+		9340BE3543E2493FA6EF62B3 /* Pods_SW_MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SW_MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CD106422BA2D78005E9741 /* SW_MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SW_MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CD106722BA2D78005E9741 /* SW_MJRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SW_MJRefresh.h; sourceTree = "<group>"; };
 		E6CD106822BA2D78005E9741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD98A2994ACEE4A4890C5FD /* Pods_SW_MJRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +55,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36BD91F76DB8B57A26E87ECA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9340BE3543E2493FA6EF62B3 /* Pods_SW_MJRefresh.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7358F458B6115D8E668DC4E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66C9F2A77DF8432890D11FED /* Pods-SW_MJRefresh.debug.xcconfig */,
+				732BF0B6BD7DA74138D81BA4 /* Pods-SW_MJRefresh.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E6CD105A22BA2D78005E9741 = {
 			isa = PBXGroup;
 			children = (
 				E6CD106622BA2D78005E9741 /* SW_MJRefresh */,
 				E6CD107122BA2D79005E9741 /* SW_MJRefreshTests */,
 				E6CD106522BA2D78005E9741 /* Products */,
+				7358F458B6115D8E668DC4E5 /* Pods */,
+				36BD91F76DB8B57A26E87ECA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +129,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6CD107822BA2D79005E9741 /* Build configuration list for PBXNativeTarget "SW_MJRefresh" */;
 			buildPhases = (
+				C4F43A1BFDB569BBDF66A462 /* [CP] Check Pods Manifest.lock */,
 				E6CD105F22BA2D78005E9741 /* Headers */,
 				E6CD106022BA2D78005E9741 /* Sources */,
 				E6CD106122BA2D78005E9741 /* Frameworks */,
@@ -188,6 +214,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C4F43A1BFDB569BBDF66A462 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SW_MJRefresh-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6CD106022BA2D78005E9741 /* Sources */ = {
@@ -340,6 +391,7 @@
 		};
 		E6CD107922BA2D79005E9741 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66C9F2A77DF8432890D11FED /* Pods-SW_MJRefresh.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -350,6 +402,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SW_MJRefresh/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,6 +418,7 @@
 		};
 		E6CD107A22BA2D79005E9741 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 732BF0B6BD7DA74138D81BA4 /* Pods-SW_MJRefresh.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +429,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SW_MJRefresh/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
