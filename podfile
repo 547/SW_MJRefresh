@@ -4,7 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'SW_MJRefresh' do
-  pod 'MJRefresh'
+  pod 'MJRefresh',:git => 'https://github.com/CoderMJLee/MJRefresh'
   
 end
 

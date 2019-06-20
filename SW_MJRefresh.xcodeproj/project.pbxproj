@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E684506122BB5855000BF665 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684506022BB5855000BF665 /* ScrollView.swift */; };
 		E6CD106E22BA2D79005E9741 /* SW_MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CD106422BA2D78005E9741 /* SW_MJRefresh.framework */; };
 		E6CD107322BA2D79005E9741 /* SW_MJRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD107222BA2D79005E9741 /* SW_MJRefreshTests.swift */; };
 		E6CD107522BA2D79005E9741 /* SW_MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = E6CD106722BA2D78005E9741 /* SW_MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,12 +28,14 @@
 		66C9F2A77DF8432890D11FED /* Pods-SW_MJRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SW_MJRefresh.debug.xcconfig"; path = "Target Support Files/Pods-SW_MJRefresh/Pods-SW_MJRefresh.debug.xcconfig"; sourceTree = "<group>"; };
 		732BF0B6BD7DA74138D81BA4 /* Pods-SW_MJRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SW_MJRefresh.release.xcconfig"; path = "Target Support Files/Pods-SW_MJRefresh/Pods-SW_MJRefresh.release.xcconfig"; sourceTree = "<group>"; };
 		9340BE3543E2493FA6EF62B3 /* Pods_SW_MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SW_MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E684506022BB5855000BF665 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		E6CD106422BA2D78005E9741 /* SW_MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SW_MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CD106722BA2D78005E9741 /* SW_MJRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SW_MJRefresh.h; sourceTree = "<group>"; };
 		E6CD106822BA2D78005E9741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6CD106D22BA2D79005E9741 /* SW_MJRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SW_MJRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CD107222BA2D79005E9741 /* SW_MJRefreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SW_MJRefreshTests.swift; sourceTree = "<group>"; };
 		E6CD107422BA2D79005E9741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6CD108622BA441A005E9741 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		36BD91F76DB8B57A26E87ECA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6CD108622BA441A005E9741 /* MJRefresh.framework */,
 				9340BE3543E2493FA6EF62B3 /* Pods_SW_MJRefresh.framework */,
 			);
 			name = Frameworks;
@@ -69,7 +73,6 @@
 				66C9F2A77DF8432890D11FED /* Pods-SW_MJRefresh.debug.xcconfig */,
 				732BF0B6BD7DA74138D81BA4 /* Pods-SW_MJRefresh.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -96,6 +99,7 @@
 		E6CD106622BA2D78005E9741 /* SW_MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				E684506022BB5855000BF665 /* ScrollView.swift */,
 				E6CD106722BA2D78005E9741 /* SW_MJRefresh.h */,
 				E6CD106822BA2D78005E9741 /* Info.plist */,
 			);
@@ -174,6 +178,7 @@
 				TargetAttributes = {
 					E6CD106322BA2D78005E9741 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					E6CD106C22BA2D79005E9741 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -245,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E684506122BB5855000BF665 /* ScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +399,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66C9F2A77DF8432890D11FED /* Pods-SW_MJRefresh.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -411,8 +419,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Seven.SW-MJRefresh";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -420,6 +430,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 732BF0B6BD7DA74138D81BA4 /* Pods-SW_MJRefresh.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -440,12 +452,14 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};
 		E6CD107C22BA2D79005E9741 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GTWT2P766B;
 				INFOPLIST_FILE = SW_MJRefreshTests/Info.plist;
@@ -464,6 +478,7 @@
 		E6CD107D22BA2D79005E9741 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GTWT2P766B;
 				INFOPLIST_FILE = SW_MJRefreshTests/Info.plist;
