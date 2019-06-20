@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MJRefresh
 extension UIScrollView {
-    func setRefreshView(refreshBlock:(() -> ())?,loadMoreBlock:(() -> ())?) -> (){
+    public func setRefreshView(refreshBlock:(() -> ())?,loadMoreBlock:(() -> ())?) -> (){
         if refreshBlock != nil {
             let headView = MJRefreshNormalHeader.init(refreshingBlock: refreshBlock)
             headView?.lastUpdatedTimeLabel.isHidden = true
@@ -22,17 +22,17 @@ extension UIScrollView {
             mj_footer.isHidden = true
         }
     }
-    func headerView(hidden:Bool) -> () {
+    public func headerView(hidden:Bool) -> () {
         if mj_header != nil, mj_header.isHidden != hidden {
             mj_header.isHidden = hidden
         }
     }
-    func footerView(hidden:Bool) -> () {
+    public func footerView(hidden:Bool) -> () {
         if mj_footer != nil, mj_footer.isHidden != hidden {
             mj_footer.isHidden = hidden
         }
     }
-    func stopRefresh() -> () {
+    public func stopRefresh() -> () {
         if mj_footer != nil && mj_footer.isRefreshing {
             mj_footer.endRefreshing()
         }
@@ -40,7 +40,7 @@ extension UIScrollView {
             mj_header.endRefreshing()
         }
     }
-    func refresh() -> () {
+    public func refresh() -> () {
         if mj_header != nil{
             mj_header.beginRefreshing()
         }
