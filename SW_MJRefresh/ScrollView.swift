@@ -13,13 +13,15 @@ extension UIScrollView {
     public func setRefreshView(refreshBlock:(() -> ())?,loadMoreBlock:(() -> ())?) -> (){
         if let refreshBlock = refreshBlock {
             let headView = MJRefreshNormalHeader.init(refreshingBlock: refreshBlock)
-            headView.lastUpdatedTimeLabel?.isHidden = true
+            if let lastUpdatedTimeLabel = headView.lastUpdatedTimeLabel{
+                lastUpdatedTimeLabel.isHidden = true
+            }
             mj_header = headView
         }
         if let loadMoreBlock = loadMoreBlock {
             let footView = MJRefreshAutoNormalFooter.init(refreshingBlock: loadMoreBlock)
+            footView.isHidden = true
             mj_footer = footView
-            mj_footer?.isHidden = true
         }
     }
     public func headerView(hidden:Bool) -> () {

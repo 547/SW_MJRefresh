@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SW_MJRefresh"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "在 MJRefresh 的基础上扩展的方法"
 
   # This description is used to generate tags and improve search results.
