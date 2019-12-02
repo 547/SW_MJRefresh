@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5C79CE3B2394FB3700A4DE15 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C79CE382394FB3700A4DE15 /* ScrollView.swift */; };
-		5C79CE3D2394FB3700A4DE15 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C79CE3A2394FB3700A4DE15 /* Info.plist */; };
 		5C79CE3E2394FB5B00A4DE15 /* SW_MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C79CE392394FB3700A4DE15 /* SW_MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6CD106E22BA2D79005E9741 /* SW_MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CD106422BA2D78005E9741 /* SW_MJRefresh.framework */; };
 		E6CD107322BA2D79005E9741 /* SW_MJRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD107222BA2D79005E9741 /* SW_MJRefreshTests.swift */; };
@@ -209,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C79CE3D2394FB3700A4DE15 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
