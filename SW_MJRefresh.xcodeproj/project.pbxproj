@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E684506122BB5855000BF665 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684506022BB5855000BF665 /* ScrollView.swift */; };
+		5C79CE3B2394FB3700A4DE15 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C79CE382394FB3700A4DE15 /* ScrollView.swift */; };
+		5C79CE3D2394FB3700A4DE15 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C79CE3A2394FB3700A4DE15 /* Info.plist */; };
+		5C79CE3E2394FB5B00A4DE15 /* SW_MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C79CE392394FB3700A4DE15 /* SW_MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6CD106E22BA2D79005E9741 /* SW_MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CD106422BA2D78005E9741 /* SW_MJRefresh.framework */; };
 		E6CD107322BA2D79005E9741 /* SW_MJRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD107222BA2D79005E9741 /* SW_MJRefreshTests.swift */; };
-		E6CD107522BA2D79005E9741 /* SW_MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = E6CD106722BA2D78005E9741 /* SW_MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD98A2994ACEE4A4890C5FD /* Pods_SW_MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9340BE3543E2493FA6EF62B3 /* Pods_SW_MJRefresh.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +26,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C79CE382394FB3700A4DE15 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		5C79CE392394FB3700A4DE15 /* SW_MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SW_MJRefresh.h; sourceTree = "<group>"; };
+		5C79CE3A2394FB3700A4DE15 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66C9F2A77DF8432890D11FED /* Pods-SW_MJRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SW_MJRefresh.debug.xcconfig"; path = "Target Support Files/Pods-SW_MJRefresh/Pods-SW_MJRefresh.debug.xcconfig"; sourceTree = "<group>"; };
 		732BF0B6BD7DA74138D81BA4 /* Pods-SW_MJRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SW_MJRefresh.release.xcconfig"; path = "Target Support Files/Pods-SW_MJRefresh/Pods-SW_MJRefresh.release.xcconfig"; sourceTree = "<group>"; };
 		9340BE3543E2493FA6EF62B3 /* Pods_SW_MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SW_MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E684506022BB5855000BF665 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		E6CD106422BA2D78005E9741 /* SW_MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SW_MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6CD106722BA2D78005E9741 /* SW_MJRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SW_MJRefresh.h; sourceTree = "<group>"; };
-		E6CD106822BA2D78005E9741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6CD106D22BA2D79005E9741 /* SW_MJRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SW_MJRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CD107222BA2D79005E9741 /* SW_MJRefreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SW_MJRefreshTests.swift; sourceTree = "<group>"; };
 		E6CD107422BA2D79005E9741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +68,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5C79CE372394FB3700A4DE15 /* SW_MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				5C79CE382394FB3700A4DE15 /* ScrollView.swift */,
+				5C79CE392394FB3700A4DE15 /* SW_MJRefresh.h */,
+				5C79CE3A2394FB3700A4DE15 /* Info.plist */,
+			);
+			path = SW_MJRefresh;
+			sourceTree = "<group>";
+		};
 		7358F458B6115D8E668DC4E5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +90,7 @@
 		E6CD105A22BA2D78005E9741 = {
 			isa = PBXGroup;
 			children = (
-				E6CD106622BA2D78005E9741 /* SW_MJRefresh */,
+				5C79CE372394FB3700A4DE15 /* SW_MJRefresh */,
 				E6CD107122BA2D79005E9741 /* SW_MJRefreshTests */,
 				E6CD106522BA2D78005E9741 /* Products */,
 				7358F458B6115D8E668DC4E5 /* Pods */,
@@ -94,16 +105,6 @@
 				E6CD106D22BA2D79005E9741 /* SW_MJRefreshTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E6CD106622BA2D78005E9741 /* SW_MJRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				E684506022BB5855000BF665 /* ScrollView.swift */,
-				E6CD106722BA2D78005E9741 /* SW_MJRefresh.h */,
-				E6CD106822BA2D78005E9741 /* Info.plist */,
-			);
-			path = SW_MJRefresh;
 			sourceTree = "<group>";
 		};
 		E6CD107122BA2D79005E9741 /* SW_MJRefreshTests */ = {
@@ -122,7 +123,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6CD107522BA2D79005E9741 /* SW_MJRefresh.h in Headers */,
+				5C79CE3E2394FB5B00A4DE15 /* SW_MJRefresh.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C79CE3D2394FB3700A4DE15 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E684506122BB5855000BF665 /* ScrollView.swift in Sources */,
+				5C79CE3B2394FB3700A4DE15 /* ScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
