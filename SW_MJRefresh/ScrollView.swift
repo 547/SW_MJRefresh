@@ -9,18 +9,47 @@
 import Foundation
 import UIKit
 import MJRefresh
+var isRefreshingKey_UIScrollView = "isRefreshingKey_UIScrollView"
 extension UIScrollView {
-    /// mj_header、mj_footer中有一个isRefreshing == true 就返回true
-    public var isRefreshing:Bool{
-        var result = false
-        if let value = mj_header, value.isRefreshing {
-            result = true
-        }
-        if let value = mj_footer, value.isRefreshing {
-            result = true
-        }
-        return result
+    ///正在加载数据
+    public var isRefreshingDatas:Bool {
+        return is_refreshing_datas
     }
+   ///正在加载数据
+   private var is_refreshing_datas: Bool {
+        set {
+            objc_setAssociatedObject(self, &isRefreshingKey_UIScrollView, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+        get {
+            if let rs = objc_getAssociatedObject(self, &isRefreshingKey_UIScrollView) as? Bool {
+                return rs
+            }
+            return false
+        }
+    }
+}
+extension UIScrollView {
+    /// 更新是否在刷新数据, completed为空时自动reloadData(), 并且hidden mj_footer(ScrollView == UITableView|UICollectionView才reloadData，否则只更新isRefreshingDatas的值)，不为空时则执行completed
+    /// - Parameters:
+    ///   - value: 是否在刷新数据
+    ///   - completed: 更新isRefreshingDatas的值后要执行的
+    public func isRefreshingDatas(_ value:Bool, completed:(() -> ())? = nil) -> () {
+        is_refreshing_datas = value
+        if let ct = completed{
+           ct()
+        }else {
+            if let tb = self as? UITableView {
+                tb.reloadData()
+            }else if let cv = self as? UICollectionView {
+                cv.reloadData()
+            }
+            if value, let value = mj_footer, !value.isHidden {
+                footerView(hidden: true)
+            }
+        }
+    }
+}
+extension UIScrollView {
     /// mj_header的isRefreshing == true 就返回true
     public var headerIsRefreshing:Bool{
         var result = false
@@ -30,7 +59,7 @@ extension UIScrollView {
         return result
     }
     /// mj_footer的isRefreshing == true 就返回true
-    public var footerIsRefreshing:Bool{
+    public var footerIsLoadingMore:Bool{
         var result = false
         if let value = mj_footer, value.isRefreshing {
             result = true
