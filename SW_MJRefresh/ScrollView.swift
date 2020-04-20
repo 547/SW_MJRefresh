@@ -10,6 +10,35 @@ import Foundation
 import UIKit
 import MJRefresh
 extension UIScrollView {
+    /// mj_header、mj_footer中有一个isRefreshing == true 就返回true
+    public var isRefreshing:Bool{
+        var result = false
+        if let value = mj_header, value.isRefreshing {
+            result = true
+        }
+        if let value = mj_footer, value.isRefreshing {
+            result = true
+        }
+        return result
+    }
+    /// mj_header的isRefreshing == true 就返回true
+    public var headerIsRefreshing:Bool{
+        var result = false
+        if let value = mj_header, value.isRefreshing {
+            result = true
+        }
+        return result
+    }
+    /// mj_footer的isRefreshing == true 就返回true
+    public var footerIsRefreshing:Bool{
+        var result = false
+        if let value = mj_footer, value.isRefreshing {
+            result = true
+        }
+        return result
+    }
+}
+extension UIScrollView {
     public func setRefreshView(refreshBlock:(() -> ())?,loadMoreBlock:(() -> ())?) -> (){
         if let refreshBlock = refreshBlock {
             let headView = MJRefreshNormalHeader.init(refreshingBlock: refreshBlock)
