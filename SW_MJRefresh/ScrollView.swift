@@ -9,32 +9,39 @@
 import Foundation
 import UIKit
 import MJRefresh
-var isRefreshingKey_UIScrollView = "isRefreshingKey_UIScrollView"
 extension UIScrollView {
-    ///正在加载数据
-    public var isRefreshingDatas:Bool {
-        return is_refreshing_datas
-    }
-   ///正在加载数据
-   private var is_refreshing_datas: Bool {
-        set {
-            objc_setAssociatedObject(self, &isRefreshingKey_UIScrollView, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
-        }
-        get {
-            if let rs = objc_getAssociatedObject(self, &isRefreshingKey_UIScrollView) as? Bool {
-                return rs
-            }
-            return false
-        }
+    struct AssociatedKey {
+        static var isRefreshingKey_UIScrollView = "20002000"
     }
 }
 extension UIScrollView {
-    /// 更新是否在刷新数据, completed为空时自动reloadData(), 并且hidden mj_footer(ScrollView == UITableView|UICollectionView才reloadData，否则只更新isRefreshingDatas的值)，不为空时则执行completed
+    ///正在加载数据
+     var is_refreshing_datas: Bool {
+         set {
+             objc_setAssociatedObject(self, &AssociatedKey.isRefreshingKey_UIScrollView, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+         }
+         
+         get {
+             if let rs = objc_getAssociatedObject(self, &AssociatedKey.isRefreshingKey_UIScrollView) as? Bool {
+                 return rs
+             }
+             
+             return true
+         }
+     }
+}
+public extension UIScrollView {
+    ///正在加载数据
+    var isRefreshingDatas:Bool {
+        return is_refreshing_datas
+    }
+}
+public extension UIScrollView {
+    /// 更新isRefreshingDatas = true, completed为空时自动reloadData(), 并且hidden mj_footer(ScrollView == UITableView|UICollectionView才reloadData，否则只更新isRefreshingDatas的值)，不为空时则执行completed
     /// - Parameters:
-    ///   - value: 是否在刷新数据
     ///   - completed: 更新isRefreshingDatas的值后要执行的
-    public func isRefreshingDatas(_ value:Bool, completed:(() -> ())? = nil) -> () {
-        is_refreshing_datas = value
+    func refreshingDatas(_ completed:(() -> ())? = nil) -> () {
+        is_refreshing_datas = true
         if let ct = completed{
            ct()
         }else {
@@ -43,15 +50,24 @@ extension UIScrollView {
             }else if let cv = self as? UICollectionView {
                 cv.reloadData()
             }
-            if value, let value = mj_footer, !value.isHidden {
+            if let value = mj_footer, !value.isHidden {
                 footerView(hidden: true)
             }
         }
     }
+    /// 更新isRefreshingDatas = false
+    /// - Parameters:
+    ///   - completed: 更新isRefreshingDatas的值后要执行的
+    func endRefreshingDatas(_ completed:(() -> ())? = nil) -> () {
+        is_refreshing_datas = false
+        if let ct = completed{
+           ct()
+        }
+    }
 }
-extension UIScrollView {
+public extension UIScrollView {
     /// mj_header的isRefreshing == true 就返回true
-    public var headerIsRefreshing:Bool{
+    var headerIsRefreshing:Bool{
         var result = false
         if let value = mj_header, value.isRefreshing {
             result = true
@@ -59,7 +75,7 @@ extension UIScrollView {
         return result
     }
     /// mj_footer的isRefreshing == true 就返回true
-    public var footerIsLoadingMore:Bool{
+    var footerIsLoadingMore:Bool{
         var result = false
         if let value = mj_footer, value.isRefreshing {
             result = true
@@ -67,8 +83,8 @@ extension UIScrollView {
         return result
     }
 }
-extension UIScrollView {
-    public func setRefreshView(refreshBlock:(() -> ())?,loadMoreBlock:(() -> ())?) -> (){
+public extension UIScrollView {
+    func setRefreshView(refreshBlock:(() -> ())?,loadMoreBlock:(() -> ())?) -> (){
         if let refreshBlock = refreshBlock {
             let headView = MJRefreshNormalHeader.init(refreshingBlock: refreshBlock)
             if let lastUpdatedTimeLabel = headView.lastUpdatedTimeLabel{
@@ -82,17 +98,17 @@ extension UIScrollView {
             mj_footer = footView
         }
     }
-    public func headerView(hidden:Bool) -> () {
+    func headerView(hidden:Bool) -> () {
         if let mj_header = mj_header, mj_header.isHidden != hidden {
             mj_header.isHidden = hidden
         }
     }
-    public func footerView(hidden:Bool) -> () {
+    func footerView(hidden:Bool) -> () {
         if let mj_footer = mj_footer, mj_footer.isHidden != hidden {
             mj_footer.isHidden = hidden
         }
     }
-    public func stopRefresh() -> () {
+    func stopRefresh() -> () {
         if let mj_footer = mj_footer, mj_footer.isRefreshing {
             mj_footer.endRefreshing()
         }
@@ -100,7 +116,7 @@ extension UIScrollView {
             mj_header.endRefreshing()
         }
     }
-    public func refresh() -> () {
+    func refresh() -> () {
         if let mj_header = mj_header {
             mj_header.beginRefreshing()
         }
