@@ -1,21 +1,16 @@
 PODS:
-  - MJRefresh (3.2.3)
+  - MJRefresh (3.5.0)
 
 DEPENDENCIES:
-  - MJRefresh (from `https://github.com/CoderMJLee/MJRefresh`)
+  - MJRefresh
 
-EXTERNAL SOURCES:
-  MJRefresh:
-    :git: https://github.com/CoderMJLee/MJRefresh
-
-CHECKOUT OPTIONS:
-  MJRefresh:
-    :commit: 54a841b312a473ff72d43b8aac1b726173566fa5
-    :git: https://github.com/CoderMJLee/MJRefresh
+SPEC REPOS:
+  trunk:
+    - MJRefresh
 
 SPEC CHECKSUMS:
-  MJRefresh: 2b1214a2dc8f4df4c5dcb028ea2ad4e245425fb7
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
 
-PODFILE CHECKSUM: 1d324af13d9bebf3c0ec6e0f97e70145a8658d98
+PODFILE CHECKSUM: d630c97b7387a54ad989146071d6d3f3cdeaa532
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.1
